@@ -13,19 +13,25 @@
     background-position: center;
     background-size: cover;
     position: relative;
-    background-image:contain;
+    background-size: contain;
   }
   .logo{
     padding-top: 35px;
     padding-right: 5px;
   }
+
   nav{ 
     display: flex;
     padding: 2% 6%;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: #4f1ec1; 
+    z-index: 1000;
   }
-  nav img{
+
+nav img{
     width: 150px;
   }
   .nav-links{
@@ -53,9 +59,7 @@
     margin: auto;
     transition: 0.5s;
   }
-  .nav-links ul li:hover::after{
-    width: 100%;
-  }
+
   .text-box{
     width: 90%;
     color: #c1121f;
@@ -233,7 +237,7 @@ h3{
 .layer h3{
   width: 100%;
   font-weight: 500;
-  color: #fff;
+  color: #000;
   font-size: 26px;
   bottom:0;
   left: 50%;
@@ -414,8 +418,6 @@ button:hover {
     width: 80%;
   }
 }
-
-
 hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 15px;
@@ -520,7 +522,7 @@ a{
   margin-top: 50px;
   margin-right: 50px;
   margin-left: 50px;
-  width: 80%
+  width: 80%;
   padding: 100px 15%;
   background: grey;
   color: red;
@@ -652,7 +654,9 @@ form button{
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* === PURE CSS HAMBURGER MENU === */
+
+
+/*Hamburger Menu*/
 .menu-toggle {
   display: none;
 }
@@ -692,4 +696,54 @@ form button{
   .menu-toggle:checked + .hamburger + .nav-links {
     display: flex;
   }
+}
+/* 1. Hover */
+.nav-links ul li:hover a {
+  color: #fefae0; /* soft cream color for contrast */
+}
+
+.nav-links ul li:hover::after {
+  width: 100%;
+  background-color: #f4a261; /* warm highlight bar */
+}
+/* 2. Visited links */
+.nav-links ul li a:visited {
+  color: #999999; /* dull gray */
+}
+
+/* 3. Focus - Highlight form inputs */
+input:focus {
+  border: 2px solid #283618;
+  background-color: #fefae0;
+}
+
+/* 4. First child in nav gets bold and underlined */
+.nav-links ul li:first-child a {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* 5. First letter of each mission paragraph styled */
+.para p::first-letter {
+  font-size: 200%;
+  color: #c1121f;
+  font-weight: bold;
+}
+
+/* 6. Before h1 headings - Decorative star */
+h1::before {
+  content: "★ ";
+  color: #f4a261;
+}
+
+/* 7. Placeholder styling for input fields */
+input::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+/* 8. Highlight (selection) color */
+::selection {
+  background: #ffb4a2;
+  color: #000;
 }
